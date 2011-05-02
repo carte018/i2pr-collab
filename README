@@ -1,0 +1,19 @@
+This is the official GIT repository for the i2pr-collab effort.  
+
+Currently, there's very little here, other than this README file, but as time permits, 
+Duke will attempt to release at least those parts of our exsiting OIM connector base 
+that may be of interest and/or value, either to other OIM sites or to folks who aren't
+using OIM but who may be looking to solve some of the same IDM data exchange issues we've
+been confronted with.
+
+It's an open collaborative site, so others are more than welcome to contribute, as well.  
+
+Note that anything you share on this site will be world-readable, so if there's anything 
+proprietary or otherwise sensitive that you'd like to share, you'll want to share it through 
+another mechanism -- assume anything you post here is as public as public gets.
+
+As things change and the site expands, I'll try to make updates to this README file and 
+stay (at least roughly) in sync.
+
+--rgc
+
