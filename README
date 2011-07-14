@@ -1,3 +1,35 @@
+7.14.2011
+
+I've added the bulk of Duke-developed Oracle IDM code to the repository under the 
+"duke/oracle_idm" tree.  A few caveats:
+
+1. We've made a significant effort to remove any sensitive information from the code
+  and replace it with placeholders, but given that there's some rather hastily-developed
+  code in the tree, it's possible that we missed something.  Should you stumble upon anything
+  that seems sensitive (and you're likely as good a judge of that as we are), please let 
+  me know so we can expunge it.
+
+2. This code is not being held up as a shining example of anything.  It's released into the 
+  wild with no warranty of servicability, reliability, or applicability for any purpose.
+  It is also released with no associated expectation of support.
+  You're welcome to do anything with it that you feel is appropriate, including ignore it, 
+  but realize that whatever you do with the code, you do entirely at your own risk. :-)
+
+3. That said, this code *is* in production here at Duke, and *is* solving problems (and in 
+  at least a few cases, causing others) for us.  More than likely, there's enough Duke-
+  specific logic in the code that reusing it in its entirity anywhere else on this or another 
+  planet won't be feasible, but modulo some possible minor adjustments for differing build 
+  environments, provided all the prerequisite libraries are available, the code should all 
+  build and may even execute in your environment.  If it doesn't, read paragraph 2, above. :-)
+
+4. *That* said, if you run into questions about the code, etc., please feel free to contact me
+  at <rob@duke.edu>.  I can't promise that I'll respond to all questions quickly, or that my 
+  responses will necessarily be what you're hoping for, but I'll at least try to help the code
+  make as much sense to you as it does to us here at Duke.
+
+========================
+5.2.2011
+
 This is the official GIT repository for the i2pr-collab effort.  
 
 Currently, there's very little here, other than this README file, but as time permits, 

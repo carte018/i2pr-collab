@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Provider>
+  <Reconciliation>
+    <ReconFormatProvider name="DukeDBReconFormat" class="edu.duke.oit.idms.oracle.gtc.db.recon.ReconFormatFromDB">
+      <Configuration>
+      </Configuration>
+    </ReconFormatProvider>
+  </Reconciliation>
+</Provider> 

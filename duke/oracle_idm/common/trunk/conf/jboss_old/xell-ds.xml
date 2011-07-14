@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources>
+  <local-tx-datasource>
+    <jndi-name>jdbc/xlDS</jndi-name>
+    <connection-url>jdbc:oracle:thin:@oidmdev-db.oit.duke.edu:1805:OIDMDEV</connection-url>
+    <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+    <user-name>SUPPRESSED</user-name>
+    <password>SUPPRESSED</password>
+    <exception-sorter-class-name>org.jboss.resource.adapter.jdbc.vendor.OracleExceptionSorter</exception-sorter-class-name>
+    <check-valid-connection-sql>select 1 from XSD where 1=2 </check-valid-connection-sql>
+    <min-pool-size>30</min-pool-size>
+    <max-pool-size>50</max-pool-size>
+    <blocking-timeout-millis>15000</blocking-timeout-millis>
+    <idle-timeout-minutes>15</idle-timeout-minutes>
+    <connection-property name="oracle.net.encryption_client">required</connection-property>
+    <connection-property name="oracle.net.encryption_types_client">(RC4_256)</connection-property>
+    <connection-property name="oracle.net.crypto_checksum_client">required</connection-property>
+    <connection-property name="oracle.net.crypto_checksum_types_client">(MD5)</connection-property>
+  </local-tx-datasource>
+  <xa-datasource>
+    <jndi-name>jdbc/xlXADS</jndi-name>
+    <track-connection-by-tx>true</track-connection-by-tx>
+    <isSameRM-override-value>false</isSameRM-override-value>
+    <xa-datasource-class>oracle.jdbc.xa.client.OracleXADataSource</xa-datasource-class>
+    <xa-datasource-property name="URL">jdbc:oracle:thin:@oidmdev-db.oit.duke.edu:1805:OIDMDEV</xa-datasource-property>
+    <xa-datasource-property name="User">SUPPRESSED</xa-datasource-property>
+    <xa-datasource-property name="Password">SUPPRESSED</xa-datasource-property>
+    <exception-sorter-class-name>org.jboss.resource.adapter.jdbc.vendor.OracleExceptionSorter</exception-sorter-class-name>
+    <no-tx-separate-pools/>
+    <valid-connection-checker-class-name>org.jboss.resource.adapter.jdbc.vendor.OracleValidConnectionChecker</valid-connection-checker-class-name>
+    <min-pool-size>30</min-pool-size>
+    <max-pool-size>50</max-pool-size>
+    <blocking-timeout-millis>15000</blocking-timeout-millis>
+    <idle-timeout-minutes>15</idle-timeout-minutes>
+    <xa-datasource-property name="ConnectionProperties">oracle.net.encryption_client=required</xa-datasource-property>
+  </xa-datasource>
+
+  <mbean code="org.jboss.resource.adapter.jdbc.vendor.OracleXAExceptionFormatter" 
+         name="jboss.jca:service=OracleXAExceptionFormatter">
+    <depends optional-attribute-name="TransactionManagerService">jboss:service=TransactionManager</depends>
+  </mbean>
+  
+</datasources>
+
+		

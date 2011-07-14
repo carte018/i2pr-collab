@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="project" default="all" basedir=".">
+
+    <target name="init">
+	<property name="build.compiler" value="modern"/>
+	<property name="debug" value="on"/>
+	<property name="optimize" value="on"/>
+	<property name="deprecation" value="on"/>
+
+	<property name="src.dir" value="./src"/>
+	<property name="lib.dir" value="./lib"/>
+	<property name="common.lib.dir" value="../../common/lib"/>
+	<property name="common.util.dir" value="../../common/util"/>
+	<property name="util.dir" value="./util"/>
+
+	<property name="build.dir" value="./build"/>
+	<property name="build.src" value="./build/src"/>
+	<property name="build.dest" value="./build/classes"/>
+    </target>
+
+    <!-- Prepares the build directory. -->
+    <target name="prepare" depends="init">
+	<mkdir dir="${build.dir}"/>
+    </target>
+
+    <!-- Prepares the source code. -->
+    <target name="prepare-src" depends="prepare">
+	<mkdir dir="${build.src}"/>
+	<mkdir dir="${build.dest}"/>
+
+	<!-- Copy all of the source files into the distribution directory. -->
+	<copy todir="${build.src}">
+	    <fileset dir="${src.dir}">
+		<include name="edu/**"/>
+	    </fileset>
+	</copy>
+
+    </target>
+
+    <!-- Enable the following command 'ant clean all'. -->
+    <target name="all" depends="jar"/>
+
+    <target name="jar" depends="build">
+	<jar jarfile="${lib.dir}/custom_oim_recon_service_directories.jar" basedir="${build.dest}"/>
+    </target>
+
+    <target name="build" depends="prepare-src">
+	<javac srcdir="${build.src}" destdir="${build.dest}" debug="${debug}" optimize="${optimize}" deprecation="${deprecation}">
+	    <classpath>
+		<fileset dir="${util.dir}">
+		    <include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${common.util.dir}">
+		    <include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${common.lib.dir}">
+		    <include name="**/*.jar"/>
+		</fileset>
+	    </classpath>
+	</javac>
+    </target>
+
+    <target name="clean" depends="init">
+	<delete dir="${build.dir}"/>
+	<delete>
+	    <fileset dir="." defaultexcludes="no">
+		<include name="**/*~"/>
+	    </fileset>
+	</delete>
+    </target>
+
+</project>

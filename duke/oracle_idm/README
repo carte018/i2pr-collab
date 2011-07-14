@@ -1,0 +1,18 @@
+ad_acl - edu.duke.idms.oracle.security.* package.  Contains classes that map the primitives and composite components of the Microsoft SecurityDescriptor.
+	 Used to manage AD ACLs from within OIM connector(s).  We primarily use these classes to maintain ntSecurityDescriptor values in OU objects in 
+	 the AD as part of a delegated AD management mechanism we've implemented.
+
+common - A collection of support libraries (both loally sourced and remote) and wrapper classes used by most or all of the connectors and utility routines.
+	
+connectors - Source code and related configuration for actual OIM connectors developed at Duke, including reconciliation connectors (for loading
+	     data into OIM and consuming updates), provisioning connectors (for provisioning users and data updates to connected systems), and 
+	     scheuled tasks (run for various administrative purposes by the OIM task scheduler).
+
+ssl - A wrapper class implemented to allow OIM connectors to avoid the standard Java certificate verification process.
+
+student_barns
+student_barn_reminders
+student_barn_cleanup
+student_netids	-	A collection of scheduled tasks designed to handle the creation of NetIDs for newly matriculated students and to handle management
+	  	        of BARNs (Big A*s Random Numbers) used for onlne activatin of new NetIDs.  
+

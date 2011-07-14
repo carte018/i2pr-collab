@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xl-configuration>
+	<!-- 
+		Type of the application server being used. 
+		Use jboss, weblogic or websphere
+	-->
+	<appServerName>WebLogic</appServerName>	
+	<!--
+			Used for loading workflow renderer
+	-->
+	<ApplicationURL>https://oim-web.oit.duke.edu/xlWebApp/loginWorkflowRenderer.do</ApplicationURL>	
+    <!--
+		Discovery settings are used to find other xellerate components.
+		
+		CoreServer : How to find core server.  This is where the APIs and the
+			DataObjectBeans for the java client are installed.
+		BackOffice : Settings to be used to find where messaging components
+			are installed.
+		Scheduler  : These settings are used to find scheduler.
+		
+		java.naming.provider.url
+		WebLogic:  t3://host:7001
+		JBoss:     jnp://host:1099  (Clustered default: 1100)
+		WebSphere: corbaloc:iiop:host:2809
+		
+		java.naming.factory.initial
+		WebLogic:  weblogic.jndi.WLInitialContextFactory
+		JBoss:     org.jnp.interfaces.NamingContextFactory
+		WebSphere: com.ibm.websphere.naming.WsnInitialContextFactory		
+    -->
+    <Discovery>
+		<CoreServer>
+			<java.naming.provider.url>t3s://oim-sched-01.oit.duke.edu:7002,oim-sched-02.oit.duke.edu:7002</java.naming.provider.url>
+			<java.naming.factory.initial>weblogic.jndi.WLInitialContextFactory</java.naming.factory.initial>
+		</CoreServer>
+    </Discovery>
+    
+    <!--  
+    	Value of MultiCastAddress needs to same as OIM server
+     -->
+    <Cache>
+    	<XLCacheProvider>
+			<MultiCastAddress>231.121.212.133</MultiCastAddress>
+		</XLCacheProvider>
+	</Cache> 
+        <Security>
+                <XLPKIProvider>
+                        <KeyStore>
+                                <Location>.xlkeystore</Location>
+                                <Password>SUPPRESSED</Password>
+                                <Type>JKS</Type>
+                                <Provider>sun.security.provider.Sun</Provider>
+                        </KeyStore>
+                        <Keys>
+                                <PrivateKey>
+                                        <Alias>SUPPRESSED</Alias>
+                                        <Password>SUPPRESSED</Password>
+                                </PrivateKey>
+                        </Keys>
+                        <SignatureAlgorithm>SHA1withDSA</SignatureAlgorithm>
+                        <SignatureProvider>sun.security.provider.Sun</SignatureProvider>
+                        <VerifySigner>true</VerifySigner>
+                </XLPKIProvider>
+        </Security>
+
+</xl-configuration>
+

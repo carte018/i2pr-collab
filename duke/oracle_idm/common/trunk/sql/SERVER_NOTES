@@ -1,0 +1,5 @@
+On the database server, ask the DBA to make the following modifications for the OIM database.
+
+1.  Set CURSOR_SHARING='FORCE'  This was a suggestion from Veronica after looking at the types of queries and updates being made by OIM.
+2.  Make sure the SGA is large enough.
+

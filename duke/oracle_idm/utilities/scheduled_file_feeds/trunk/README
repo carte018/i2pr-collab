@@ -1,0 +1,6 @@
+1.  If you get the following exception, make sure you have installed the JCE Unlimited Strength Jurisdiction Policy files.
+
+    java.security.InvalidKeyException: Illegal key size or default parameters 
+        at javax.crypto.Cipher.a(DashoA12275) 
+        at javax.crypto.Cipher.init(DashoA12275) 
+        at org.bouncycastle.openpgp.PGPEncryptedDataGenerator$PubMethod.addSessionInfo(Unknown Source)

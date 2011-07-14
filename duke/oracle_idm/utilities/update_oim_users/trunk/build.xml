@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="project" default="all" basedir=".">
+
+    <target name="init">
+	<property name="build.compiler" value="modern"/>
+	<property name="debug" value="on"/>
+	<property name="optimize" value="on"/>
+	<property name="deprecation" value="on"/>
+
+	<property name="src.dir" value="./src"/>
+	<property name="lib.dir" value="./lib"/>
+
+	<property name="build.dir" value="./build"/>
+	<property name="build.src" value="./build/src"/>
+	<property name="build.dest" value="./build/classes"/>
+	<property name="main.class" value="edu.duke.oit.idms.oracle.update_oim_users.ProvResource"/>
+    </target>
+
+    <!-- Prepares the build directory. -->
+    <target name="prepare" depends="init">
+	<mkdir dir="${build.dir}"/>
+    </target>
+
+    <!-- Prepares the source code. -->
+    <target name="prepare-src" depends="prepare">
+	<mkdir dir="${build.src}"/>
+	<mkdir dir="${build.dest}"/>
+	<mkdir dir="${lib.dir}"/>
+
+	<!-- Copy all of the source files into the distribution directory. -->
+	<copy todir="${build.src}">
+	    <fileset dir="${src.dir}">
+		<include name="edu/**"/>
+	    </fileset>
+	</copy>
+    </target>
+
+    <!-- Enable the following command 'ant clean all'. -->
+    <target name="all" depends="clean,jar"/>
+
+    <property name="common.util.dir" value="/srv/idms/oracle_idm/common/trunk/util/"/>
+        <path id="build.classpath">
+            <fileset dir="${common.util.dir}">
+                <include name="**/*.jar"/>
+            </fileset>
+    </path>
+
+    <pathconvert property="manifest.classpath" pathsep=" ">
+        <path refid="build.classpath"/>
+        <mapper>
+            <chainedmapper>
+                <flattenmapper/>
+                <globmapper from="*.jar" to="${common.util.dir}/*.jar"/>
+            </chainedmapper>
+        </mapper>
+    </pathconvert>
+<!-- <echo message="${manifest.classpath}"/> -->
+
+    <target name="jar" depends="build">
+	<jar jarfile="${lib.dir}/update_oim_users.jar" basedir="${build.dest}">
+		<manifest>
+        		<attribute name="Main-Class" value="${main.class}"/>
+        		<attribute name="Class-Path" value="${manifest.classpath}"/>
+		</manifest>
+	</jar>
+    </target>
+
+    <target name="build" depends="prepare-src">
+	<javac srcdir="${build.src}" destdir="${build.dest}" debug="${debug}" optimize="${optimize}" deprecation="${deprecation}" includeantruntime="false">
+	    <classpath>
+		<fileset dir="${common.util.dir}">
+		    <include name="**/*.jar"/>
+		</fileset>
+	    </classpath>
+	</javac>
+    </target>
+
+    <target name="clean" depends="init">
+	<delete dir="${build.dir}"/>
+	<delete>
+	    <fileset dir="." defaultexcludes="no">
+		<include name="**/*~"/>
+	    </fileset>
+	</delete>
+    </target>
+
+</project>

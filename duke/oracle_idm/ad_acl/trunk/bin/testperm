@@ -1,0 +1,2 @@
+export CLASSPATH=$CLASSPATH:../lib/ad_acl.jar:../../../ssl/trunk/lib/custom_ssl.jar
+java edu.duke.idms.oracle.security.ADPermissionmanager $*

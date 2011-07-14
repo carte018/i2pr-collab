@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Provider>
+  <Reconciliation>
+    <ReconTransportProvider name="DukeDBReconTransport" class="edu.duke.oit.idms.oracle.gtc.db.recon.ReconTransportFromDB">
+      <Configuration>
+        <Parameter datatype="String" name="connectorName" type="Runtime" encrypted="NO" required="YES" />
+        <Parameter datatype="String" name="driver" type="Runtime" encrypted="NO" required="YES" />
+        <Parameter datatype="String" name="url" type="Runtime" encrypted="NO" required="YES" />
+        <Parameter datatype="String" name="username" type="Runtime" encrypted="NO" required="YES" />
+        <Parameter datatype="String" name="password" type="Runtime" encrypted="YES" required="YES" />
+        <Parameter datatype="String" name="connectionProperties" type="Runtime" encrypted="NO" required="NO" />
+        <Parameter datatype="String" name="customDataForLogicClass1" type="Runtime" encrypted="NO" required="NO" />
+        <Parameter datatype="String" name="customDataForLogicClass2" type="Runtime" encrypted="YES" required="NO" />
+
+        <Parameter datatype="String" name="databaseSchema" type="Design" encrypted="NO" required="NO" />
+        <Parameter datatype="String" name="parentTableName" type="Design" encrypted="NO" required="YES" />
+        <Parameter datatype="String" name="childTableNamesAndColumns" type="Design" encrypted="NO" required="NO" />
+        <Parameter datatype="String" name="parentPrimaryKey" type="Design" encrypted="NO" required="YES" />
+        <Parameter datatype="String" name="childForeignKey" type="Design" encrypted="NO" required="NO" />
+        <Parameter datatype="String" name="timestampTable" type="Design" encrypted="NO" required="YES" />
+        <Parameter datatype="String" name="timestampAttribute" type="Design" encrypted="NO" required="YES" />
+        <Parameter datatype="String" name="logicClass" type="Design" encrypted="NO" required="NO" />
+      </Configuration>
+    </ReconTransportProvider>
+  </Reconciliation>
+</Provider>
