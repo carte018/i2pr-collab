@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="trunk/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/common/trunk/util/commons-beanutils.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/commons-collections.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/commons-dbcp-1.2.1.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/commons-digester.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/commons-lang.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/commons-logging.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/commons-pool-1.2.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/commons-validator.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/custom_log4j.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/dom.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/jakarta-oro-2.0.8.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/jakarta-regexp-1.2.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/javagroups-all.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/jaxp-api.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/jhall.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/jnp-client.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/jsafeFIPS.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/ldapjdk.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/log4j-1.2.8.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/mail.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/oscache.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/registry-1-5-14.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/sax.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/wlcipher.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/wlfullclient.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/xalan.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/XellerateClient.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/xerces.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/xlAPI.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/xlAuthentication.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/xlCache.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/xlCrypto.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/xlDataObjectBeans.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/xlGenConnector.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/xlLogger.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/xlScheduler.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/xlUtils.jar"/>
+	<classpathentry kind="lib" path="/common/trunk/util/xlVO.jar"/>
+	<classpathentry kind="lib" path="/Users/rob/Documents/OIM Workspace/common/trunk/lib/custom_oim_common.jar"/>
+	<classpathentry kind="lib" path="/applicants/lib"/>
+	<classpathentry kind="lib" path="/applicants/lib/applicants.jar"/>
+	<classpathentry kind="lib" path="/Users/rob/Documents/OIM Workspace/ssl/trunk/lib/custom_ssl.jar"/>
+	<classpathentry kind="output" path="trunk/bin"/>
+</classpath>
